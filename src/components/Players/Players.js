@@ -2,7 +2,7 @@ import React from 'react';
 import SinglePlayer from '../SinglePlayer/SinglePlayer';
 import './Players.css'
 
-const Players = ({players}) => {
+const Players = ({players, cart, setCart}) => {
     // const {players} = props;
     console.log(players);
     return (
@@ -12,6 +12,8 @@ const Players = ({players}) => {
                 players.map((pd)=>(<SinglePlayer 
                     player={pd} 
                     key={pd?.idPlayer}
+                    cart={cart}
+                    setCart={setCart}
                     ></SinglePlayer>))
             }
             </div>

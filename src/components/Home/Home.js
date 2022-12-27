@@ -5,6 +5,7 @@ import './Home.css'
 const Home = () => {
     const [players, setPlayers] = useState([]);
     const [search, setSearch] = useState("");
+    const [cart, setCart] = useState([]);
     useEffect( ()=>{
         fetch(
             `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${search}`
@@ -12,7 +13,10 @@ const Home = () => {
         .then(res => res.json())
         .then(data => setPlayers(data?.player))
     },[search])
-    console.log(players);
+    
+    
+
+
     return (
         <div>
             <div className="home-container">
@@ -21,13 +25,20 @@ const Home = () => {
                         onChange={(e)=>setSearch(e.target.value)} type="text"className='search-input'/>
                     <button className='search-btn'>Search</button>
                     <div className="players-container">
-                        <Players players={players}></Players>
+                        <Players 
+                        players={players} 
+                        cart={cart} 
+                        setCart={setCart}
+                        ></Players>
                     </div>
                 </div>
 
                 <div className="right-side">
                     <div className='cart'>
                         <p>this is player cart</p>
+                        {
+                            cart?.map((p) => (<li>{p.idPlayer}</li>))
+                        }
                     </div>
                 </div>
             </div>

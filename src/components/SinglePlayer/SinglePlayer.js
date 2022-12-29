@@ -2,7 +2,7 @@ import React from 'react';
 import './SinglePlayer.css'
 
 const SinglePlayer = ({player, cart, setCart}) => {
-    const {strCutout, strPlayer, idPlayer, strDescriptionEN}= player;
+    const {strCutout, strPlayer, idPlayer, strDescriptionEN }= player;
 
     const handleAddToCart =()=>{
         const info ={
@@ -19,7 +19,7 @@ const SinglePlayer = ({player, cart, setCart}) => {
             setCart(newPlayer);
         }
     };
-    console.log(cart);
+    // console.log(cart);
     return (
         <div className='card'>
             <img src={strCutout} alt="" />

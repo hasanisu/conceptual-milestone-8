@@ -22,3 +22,16 @@
     padding: 10px;
     margin-right: 10px;
 }
+
+.cart-info-container{
+    display: flex;
+    justify-content: center;
+}
+
+.delete-btn{
+    padding: 9px, 15px;
+    background-color: blue;
+    color: white;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Players from '../Players/Players';
-import './Home.css'
+import './Home.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Home = () => {
     const [players, setPlayers] = useState([]);
@@ -17,6 +18,7 @@ const Home = () => {
     const handleDelete =(id)=>{
         const leftPlayer = cart.filter((pd)=> pd.idPlayer !== id);
         setCart(leftPlayer);
+        toast("wow deleted from cart!");
     }
 
 
